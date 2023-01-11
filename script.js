@@ -510,11 +510,18 @@ class Compte {
 
     }
 }
+
 class CompteEpargne extends Compte {
     constructor(titulaire, montant = 50, taux = 0.05) {
         super(titulaire, montant, taux);
         this.taux = taux;
     }
 
-    setInterval(() => { }, interval);
+    nouveauSolde() {
+        setInterval(function consoleCount() => {
+            CompteEpargne += 1 + this.taux;
+        }, 1000);
+    }
 }
+
+
