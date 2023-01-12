@@ -623,7 +623,7 @@ let eleves = [
 ]
 
 Classe.prototype.moyenneEleve = function () {
-    let result = this.elements.map(element => element.Notes );
+    let result = this.elements.map(element => element.Notes.reduce() );
     return result;
 }
 
