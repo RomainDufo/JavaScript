@@ -479,11 +479,11 @@ class VeloElectrique extends Vélo {
 Romain = new VeloElectrique("Cyfac", "78", "jaune");
 Romain.moveElectrique("80", "10500");
 
-*/
+
 
 //Exercice 25//
 
-class Titualaire {
+class Titulaire {
     constructor(nom, prenom) {
         this.nom = nom;
         this.prenom = prenom;
@@ -500,14 +500,14 @@ class Compte {
         this.montant = montant;
     }
 
-    crediter() {
-
+    crediter(somme) {
+        this.montant = this.montant + somme;
     }
-    debiter() {
-
+    debiter(somme) {
+        this.montant = this.montant - somme;
     }
     afficherSolde() {
-
+        console.log(`Le solde de compte est de: ${this.montant}€`);
     }
 }
 
@@ -515,13 +515,99 @@ class CompteEpargne extends Compte {
     constructor(titulaire, montant = 50, taux = 0.05) {
         super(titulaire, montant, taux);
         this.taux = taux;
+
+        setInterval(() => {
+            this.montant += 1 * this.taux;
+        }, 1000);
+
+        
     }
 
-    nouveauSolde() {
-        setInterval(function consoleCount() => {
-            CompteEpargne += 1 + this.taux;
-        }, 1000);
-    }
+
+
 }
 
+//A faire
+let titulaire1 = new Titulaire("Dufour", "Romain");
+let titulaire2 = new Titulaire("Jaume", "Paul");
+let titulaire3 = new Titulaire("Lefevre", "Lili");
+
+console.log(titulaire1);
+titulaire2.sePresenter();
+
+let compte1 = new Compte(titulaire3);
+
+console.log(compte1);
+
+compte1.crediter(150);
+
+console.log(compte1);
+
+compte1.debiter(20);
+
+compte1.afficherSolde();
+
+let compte2 = new CompteEpargne(titulaire2, 15);
+
+console.log(compte2);
+
+compte2.crediter(50);
+compte2.crediter(50);
+compte2.crediter(50);
+compte2.crediter(50);
+
+console.log(compte2);
+
+compte2.debiter(100);
+
+console.log(compte2);
+
+compte2.afficherSolde();
+
+
+//Exercice 26//
+
+function Voiture(elements) {
+    this.elements = elements;
+}
+
+let voitures = [
+    { marque: "Peugeot", modele: "207", carburant: "Essence", couleur: "Noir" },
+    { marque: "Renault", modele: "Clio", carburant: "Diesel", couleur: "Blanche" },
+    { marque: "Mercedez", modele: "GLC", carburant: "Essence", couleur: "Grise" },
+    { marque: "Peugeot", modele: "308", carburant: "Essence", couleur: "Blanche" },
+    { marque: "Renault", modele: "Espace", carburant: "Essence", couleur: "Blanche" },
+    { marque: "Mercedez", modele: "Classe C", carburant: "Diesel", couleur: "Rouge" }
+]
+
+Voiture.prototype.returnVoitures = function () {
+    let result = this.elements.filter(element => element);
+    console.log(result);
+}
+
+Voiture.prototype.filtreVoitures = function () {
+    let recherche = prompt("Entrez votre recherche",);
+    let result = this.elements.filter(element => {
+        if (element.marque == recherche) {
+            return element.marque;
+        } else if (element.modele == recherche) {
+            return element.modele;
+        } else if (element.carburant == recherche) {
+            return element.carburant;
+        } else if (element.couleur == recherche) {
+            return element.couleur;
+        }
+    })
+    console.log(result);
+}
+
+
+
+console.log(liste1 = new Voiture(voitures));
+
+liste1.returnVoitures();
+liste1.filtreVoitures();
+
+*/
+//Exercice 27//
 
