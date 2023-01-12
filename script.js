@@ -611,3 +611,23 @@ liste1.filtreVoitures();
 */
 //Exercice 27//
 
+function Classe(elements) {
+    this.elements = elements;
+}
+
+let eleves = [
+    { Nom: "Gilles", Notes: [10, 15, 20, 14] },
+    { Nom: "Mathieu", Notes: [11, 5, 8, 15] },
+    { Nom: "Mathilde", Notes: [15, 13, 10, 20] },
+    { Nom: "Hannah", Notes: [16, 20, 18, 15] }
+]
+
+Classe.prototype.moyenneEleve = function () {
+    let result = this.elements.map(element => element.Notes );
+    return result;
+}
+
+
+liste1 = new Classe(eleves);
+console.log(liste1.moyenneEleve());
+
