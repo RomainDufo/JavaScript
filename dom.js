@@ -74,3 +74,14 @@ createDom("button", "JS", document.body);
 createDom("p", "L'un des principaux buts de HTML est de structurer du texte et lui donner du sens (ce que l'on appelle la sémantique) afin que le navigateur puisse l'afficher correctement. Cet article explique comment HTML peut être utilisé pour structurer une page en ajoutant des titres et des paragraphes, en marquant des emphases, en créant des listes, et bien plus encore.", document.body);
 createDom("p", "Dans cet article, nous allons commencer le voyage vers la maîtrise des styles du texte avec CSS. Nous passerons en revue les principes de base de mise en forme du texte, y compris la graisse, la famille et le style de police, les codes d'abréviation, l'alignement du texte et autres effets, ainsi que l'espacement des lignes et des lettres.", document.body);
 createDom("p", "Concentrons-nous maintenant sur les chaînes de caractères - c'est le nom donné à un segment de texte en programmation. Dans cet article, nous aborderons les aspects les plus communs des chaînes de caractères que vous devez vraiment connaître quand vous apprenez JavaScript, comme créer une chaîne de caractères, échapper des guillemets dans une chaîne ou encore concaténer des chaînes.", document.body);
+
+
+ps.forEach((p) => {
+    p.addEventListener('click', () => {
+        if (getComputedStyle(p).display != "none") {
+            p.style.display = "none";
+        } else {
+            p.style.display = "block";
+        }
+    })
+})
