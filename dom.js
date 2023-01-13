@@ -169,7 +169,7 @@ function displayTimer() {
     timerRef.innerHTML = ` ${h} : ${m} : ${s} `;
 }
 
-*/
+
 
 //Exercice 7//
 
@@ -180,21 +180,27 @@ function createDom(element_name, text, parent) {
     return markup;
 }
 
-createDom("input", "", document.body);
+let euros = createDom("input", "", document.body);
 createDom("label", "euros", document.body);
-let euros = document.querySelector("input");
 euros.setAttribute("id", "euros")
 console.log(euros);
 
-createDom("input", "", document.body);
+let francs = createDom("input", "", document.body);
 createDom("label", "francs suisse", document.body);
-let francs = document.querySelector("input");
-francs.setAttribute("id", "francs");
+francs.setAttribute("id", "francs suisse");
 console.log(francs);
 
 
 
+function convSomme(id, valeur) {
+    if (id == "euros") {
 
+    } else if (id == "francs suisse") {
+
+    }
+}
+
+*/
 
 
 
