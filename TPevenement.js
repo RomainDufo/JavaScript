@@ -7,41 +7,11 @@ function createDom(element_name, text, parent) {
     parent.appendChild(markup);
     return markup;
 }
-let navbar = createDom("nav", "------NAVBAR-------", document.body);
-let ul = createDom("ul", "", navbar);
-let boutonForm = createDom("button", "Afficher Formulaire", document.body);
-let formulaire = createDom("form", "", document.body);
-let titreLabel = createDom("label", " Ecrire votre Titre: ", formulaire);
-let titreInput = createDom("input", "", formulaire);
-let paragLabel = createDom("label", " Ecrire vos paragraphes: ", formulaire);
-let paragInput = createDom("input", "", formulaire);
-let btnEditer = createDom("button", "Editer", formulaire);
-let divArticle = createDom("div", "", document.body);
-
-
-
-function editerArticle() {
-    let Div1 = createDom("div", "", document.body);
-    createDom("h2", titreInput.value, Div1);
-    createDom("p", paragInput.value, Div1);
-    createDom("button", "supprimer", Div1);
-    Article = [Titre, Paragraphe, btnSupp];
-}
-
-function editerNav() {
-
-}
 */
-/*boutonForm.style.display = 'none';
-
-if (titreInput.value.trim == "" || paragInput.value.trim == "") {
-        e.preventDefault();
-    }*/
-
 
 let navbar = document.createElement("nav");
 window.document.body.appendChild(navbar);
-navbar.textContent = "------NAVBAR-------";
+navbar.textContent = "";
 
 let ulNav = document.createElement("ul");
 navbar.appendChild(ulNav);
@@ -70,14 +40,10 @@ let paragInput = document.createElement("input");
 formulaire.appendChild(paragInput);
 paragInput.textContent = "";
 
-let btnEditer = document.createElement("button");
-formulaire.appendChild(btnEditer);
-btnEditer.textContent = "Editer";
-
-let divArticle = document.createElement("div");
-window.document.body.appendChild(divArticle);
-
-
+let articlesTab = [];
+let navbarsTab = [];
+let navbarClassTab = [];
+let articleClassTab = [];
 
 
 boutonForm.addEventListener('click', function () {
@@ -85,42 +51,72 @@ boutonForm.addEventListener('click', function () {
         formulaire.style.display = 'block';
     } else {
         formulaire.style.display = 'none';
+        paragInput.value = "";
+        titreInput.value = "";
     }
 });
 
 
-btnEditer.addEventListener('click', function () {
-    article.hidden = false;
-    newArticle()
-    newTitreNavbar()
+let btnEditer = document.createElement("button");
+formulaire.appendChild(btnEditer);
+btnEditer.textContent = "Editer";
+btnEditer.setAttribute("id", "btnEditer");
+
+document.getElementById("btnEditer").addEventListener("click", function (event) {
+    event.preventDefault();
+    newArticle();
+    newTitreNavbar();
+    formulaire.style.display = 'none';
+    paragInput.value = "";
+    titreInput.value = "";
 });
 
 
-let article = document.createElement("article");
-divArticle.appendChild(article);
 
-let titre = document.createElement("h2");
-article.appendChild(titre);
-
-let paragraphe = document.createElement("p");
-article.appendChild(paragraphe);
-
-let boutonEdit = document.createElement("button");
-article.appendChild(boutonEdit);
-boutonEdit.textContent = "Supprimer";
-
-article.hidden = true;
-
-
-
+// Fonction créer un nouvelle article //
+let incrementationArticle = 1;
 
 function newArticle(event) {
+    let article = document.createElement("article");
+    document.body.appendChild(article);
+
+    let titre = document.createElement("h2");
+    article.appendChild(titre);
     titre.textContent = titreInput.value;
+
+    let paragraphe = document.createElement("p");
+    article.appendChild(paragraphe);
     paragraphe.textContent = paragInput.value;
-}
+
+    let boutonSupp = document.createElement("button");
+    article.appendChild(boutonSupp);
+    boutonSupp.textContent = "Supprimer";
+
+    articlesTab.push(article);
+
+
+    let idBouton = "boutonSupp" + incrementationArticle;
+    let idArticle = "article" + incrementationArticle;
+    let clas = "article" + incrementationArticle;
+    incrementationArticle++;
+    article.setAttribute("class", clas);
+    article.setAttribute("id", idArticle)
+    boutonSupp.setAttribute("class", clas);
+    boutonSupp.setAttribute("id", idBouton)
+    console.log(article, boutonSupp);
+
+    document.getElementById(idBouton).addEventListener("click", function () {
+        article.remove();
+        let supp = document.getElementById(idArticle);
+        supp.remove();
+    });
+
+};
 
 
 
+// Fonction mettre un nouveau titre dans une navbar//
+let incrementationNav = 1;
 
 function newTitreNavbar() {
     let li = document.createElement("li");
@@ -130,7 +126,25 @@ function newTitreNavbar() {
     li.appendChild(titreNavbar);
     titreNavbar.textContent = titreInput.value;
 
-    return false;
+    navbarsTab.push(titreNavbar);
+
+    let clas = "article" + incrementationNav;
+    let href = "#article" + incrementationNav;
+    titreNavbar.setAttribute("href", href);
+    li.setAttribute("class", clas);
+    li.setAttribute("id", clas);
+    incrementationNav++;
+    console.log(li);
 }
+
+
+
+
+
+
+
+
+
+
 
 
