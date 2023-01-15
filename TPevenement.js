@@ -22,7 +22,7 @@ boutonForm.textContent = "Afficher Formulaire";
 
 let formulaire = document.createElement("form");
 window.document.body.appendChild(formulaire);
-formulaire.hidden = true;
+formulaire.style.display = 'none';
 
 let titreLabel = document.createElement("label");
 formulaire.appendChild(titreLabel);
@@ -45,7 +45,7 @@ let navbarsTab = [];
 let navbarClassTab = [];
 let articleClassTab = [];
 
-
+// Bouton afficher formulaire //
 boutonForm.addEventListener('click', function () {
     if (formulaire.style.display == 'none') {
         formulaire.style.display = 'block';
@@ -55,7 +55,6 @@ boutonForm.addEventListener('click', function () {
         titreInput.value = "";
     }
 });
-
 
 let btnEditer = document.createElement("button");
 formulaire.appendChild(btnEditer);
