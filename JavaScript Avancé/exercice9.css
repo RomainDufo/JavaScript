@@ -1,0 +1,43 @@
+/*----- Exercice 9 -----*/
+.slider2 {
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    border: 3px solid #F2F2F2;
+}
+
+.slider2 ul {
+    width: 400%;
+    height: 200px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.slider2 li {
+    float: left;
+}
+
+#precedent,
+#suivant {
+    transition: opacity 0.5s ease;
+    font-size: 75px;
+    font-weight: 100;
+    position: absolute;
+    top: 121px;
+    color: rgba(26, 24, 24, 0.6);
+    cursor: pointer;
+}
+
+#precedent {
+    left: 13px;
+}
+
+#suivant {
+    left: 334px;
+}
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+    opacity: 1;
+}
