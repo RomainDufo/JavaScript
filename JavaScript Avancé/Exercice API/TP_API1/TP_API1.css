@@ -1,0 +1,20 @@
+#resultMeteo {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+}
+
+#imgMeteo {
+    position: absolute;
+    top: 15%;
+    left: 8%;
+    z-index: -10;
+    border-radius: 10px;
+}
+
+#forMeteo{
+    z-index: 5;
+}
