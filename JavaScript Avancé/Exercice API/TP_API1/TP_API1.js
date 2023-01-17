@@ -37,12 +37,7 @@ valueVille.addEventListener('change', function (e) {
             let li3 = document.createElement("li");
             idUl.appendChild(li3);
             li3.textContent = `Température maximum ${JSON.stringify(resultData.temp_max)}°C`;
-           
-            //Titre pour soleil
-    
-            let li4 = document.createElement("li");
-            idUl.appendChild(li4);
-            li4.textContent = `Lever soleil${JSON.stringify(resultSys.sunrise)}`;
+
         })
         .catch(error => console.log(error));
 });
