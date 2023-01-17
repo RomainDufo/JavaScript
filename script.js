@@ -608,7 +608,7 @@ console.log(liste1 = new Voiture(voitures));
 liste1.returnVoitures();
 liste1.filtreVoitures();
 
-*/
+
 //Exercice 27//
 
 function Classe(elements) {
@@ -631,3 +631,4 @@ Classe.prototype.moyenneEleve = function () {
 liste1 = new Classe(eleves);
 console.log(liste1.moyenneEleve());
 
+*/  
