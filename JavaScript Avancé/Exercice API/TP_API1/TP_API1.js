@@ -31,7 +31,6 @@ li2.setAttribute("id", "tempMin");
 
 let li4 = document.createElement("li");
 idUl.appendChild(li4);
-li4.setAttribute("class", "liVent");
 li4.setAttribute("id", "degresVent");
 
 

@@ -139,3 +139,15 @@ li {
     font-size: 45px;
     color: white;
 }
+
+#ensoleille{
+    position: absolute;
+    top: 43%;
+    left: 13%;
+    border-radius: 3px;
+}
+
+#degresVent{
+    position: absolute;
+    top: 8%;
+}
