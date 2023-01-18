@@ -10,21 +10,29 @@
 </head>
 
 <body>
-    <form id="forMeteo" action="" method="get">
-        <h4>Entrez le nom d'une ville</h4>
 
-        <div id="ville">
-            <label for="ville" id="labelVille">Ville: </label>
-            <input type="text" name="ville" id="inputVille">
+    <div id="rectangle">
+        <div id="cercle">
         </div>
-    </form>
+        <p id="text_cercle">météo</p>
+    </div>
 
+
+    <img id="ensoleille" src="ensoleille.jpg" alt="">
     <img id="imgMeteo" src="meteo.jpg" alt="">
 
+    <button id="boutonTrans"></button>
+
     <div id="resultMeteo">
+        <form id="forMeteo" action="" method="get">
+            <div id="ville">
+                <input type="text" name="ville" id="inputVille" class="inputVille" placeholder="Entrez une ville">
+            </div>
+        </form>
 
+        <ul id="temperature">
 
-
+        </ul>
         <ul id="listMeteo">
 
         </ul>

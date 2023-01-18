@@ -8,6 +8,13 @@
     color: aliceblue;
 }
 
+#ensoleille {
+    position: absolute;
+    top: 30%;
+    width: 250px;
+    height: 150px;
+}
+
 #imgMeteo {
     position: absolute;
     top: 15%;
@@ -16,6 +23,119 @@
     border-radius: 10px;
 }
 
-#forMeteo{
+#forMeteo {
     z-index: 5;
+}
+
+h3 {
+    font-size: 35px;
+    position: absolute;
+    left: 130px;
+}
+
+#listMeteo {
+    position: absolute;
+    top: 25%;
+}
+
+li {
+    list-style: none;
+}
+
+#inputVille {
+    position: absolute;
+    top: 8%;
+    left: 25%;
+    width: 55%;
+    border-style: none;
+    border-radius: 2px;
+    background-color: rgb(153, 194, 255);
+    font-size: 30px;
+    color: rgb(251, 251, 252);
+}
+
+.inputVille:focus {
+    background-color: rgb(153, 194, 255);
+}
+
+#temperature li {
+    font-size: 40px;
+    position: absolute;
+    top: 22%;
+    left: 41%;
+}
+
+#listMeteo {
+    position: absolute;
+    top: 35%;
+}
+
+#imgMin {
+    width: 20px;
+    position: absolute;
+    left: 548%;
+    filter: invert(100%);
+}
+
+#tempMin {
+    position: absolute;
+    left: 603%;
+}
+
+#imgMax {
+    width: 20px;
+    position: absolute;
+    left: 239%;
+    filter: invert(100%);
+}
+
+#tempMax {
+    position: absolute;
+    left: 291%;
+}
+
+.liMeteo {
+    display: inline;
+}
+
+#boutonTrans {
+    position: absolute;
+    right: 11%;
+    top: 19%;
+    border-radius: 50%;
+    width: 36%;
+    height: 36%;
+    background-color: transparent;
+    border-color: white;
+    /*border-style: solid;*/
+}
+
+
+#rectangle {
+    position: absolute;
+    top: 65%;
+    left: 8%;
+    width: 800px;
+    height: 450px;
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(163, 208, 245), rgb(55, 121, 182));
+}
+
+#cercle {
+    position: absolute;
+    right: 4%;
+    top: 57px;
+    border-radius: 50%;
+    width: 45%;
+    height: 80%;
+    background: radial-gradient(rgb(121, 163, 211) 50%, white);
+
+}
+
+#text_cercle {
+    position: absolute;
+    right: 35%;
+    top: 113px;
+    font-size: 45px;
+    color: white;
 }
