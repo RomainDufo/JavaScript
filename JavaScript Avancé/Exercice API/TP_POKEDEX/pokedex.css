@@ -284,6 +284,12 @@
         margin: 0 auto;
     }
 
+    #img_pokedex {
+        position: absolute;
+        top: 31px;
+        left: 32px;
+    }
+
     div#topPicture {
         margin: 6px auto;
         width: 40px;
@@ -430,6 +436,17 @@
         left: 230px;
     }
 
+    /* Bouton Pokedex General */
+
+    .btn_pokedex {
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border: none;
+        z-index: 1;
+    }
+
+    /* Bouton haut */
     div#topcross {
         width: 30px;
         height: 30px;
@@ -453,6 +470,11 @@
         -webkit-border-top-right-radius: 5px;
         -moz-border-top-right-radius: 5px;
         -o-border-top-right-radius: 5px;
+    }
+
+    #btn_haut {
+        position: absolute;
+        left: -1px;
     }
 
     div#leftcross {
@@ -550,11 +572,6 @@
     #btn_bas {
         position: absolute;
         left: -1px;
-        width: 30px;
-        height: 30px;
-        background-color: transparent;
-        border: none;
-        z-index: 1;
     }
 
     div#upT {
@@ -711,6 +728,14 @@
         -moz-box-shadow: 0 0 20px #003300 inset;
         -o-box-shadow: 0 0 20px #003300 inset;
     }
+
+    .div_stats {
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    #accueil_ecran {}
 
     #stats_right {
         position: absolute;
@@ -901,6 +926,13 @@
         -o-box-shadow: 0 0 20px #ff6600 inset;
     }
 
+    .yellow_btn {
+        width: 140px;
+        height: 70px;
+        z-index: 2;
+        background-color: transparent;
+        border: none;
+    }
 }
 
 @media handheld and (orientation:portrait),
