@@ -21,6 +21,9 @@ function appelFetch() {
         .then(data => {
             console.log(data);
             let tab = [...data.Search]
+            let imgModal = document.createElement("img");
+            let paragPlot = document.createElement("p");
+
             for (let i = 0; i < tab.length; i++) {
                 let img = document.createElement("img");
                 let divContainer = document.getElementById("text_container_recherche");
@@ -28,16 +31,31 @@ function appelFetch() {
                 img.setAttribute("class", "img");
                 img.setAttribute("id", "img" + i);
                 img.setAttribute("src", tab[i].Poster);
+                img.setAttribute("data-bs-target", "#exampleModal");
+                img.setAttribute("data-bs-toggle", "modal");
 
                 img.addEventListener('click', function (e) {
                     e.preventDefault();
                     console.log("image" + i);
-                    let modalBody = document.getElementById("modal-body");
-                    modalBody.appendChild(img);
-                    let modal = document.getElementById("modal");
-                    modal.style.zIndex = 100;
+                    let idTitre = document.getElementById("modalTitle");
+                    idTitre.textContent = ` ${tab[i].Title}`;
+                    let idModalBody = document.getElementById("modal-body");
+                    imgModal.setAttribute("src", tab[i].Poster);
+                    idModalBody.appendChild(imgModal);
+
+
+                    fetch(`http://www.omdbapi.com/?i=${tab[i].imdbID}&apikey=8e6fee54`)
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log(data)
+                            let synopsis = document.getElementById("synopsis");
+                            synopsis.appendChild(paragPlot);
+                            paragPlot.textContent = ` ${data.Plot}`;
+                        })
+                        .catch(error => console.log(error));
                 })
             }
+
         })
         .catch(error => console.log(error));
 }
